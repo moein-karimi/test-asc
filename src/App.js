@@ -12,11 +12,17 @@ function App({ login }) {
     <div className="App">
       <Header />
       <Switch>
-        <Route exact path="/" component={HomePage} />
+        <Route exact path={process.env.PUBLIC_URL + '/'} component={HomePage} />
         <Route
           exact
-          path="/login"
-          render={() => (login ? <Redirect to="/" /> : <LoginPage />)}
+          path={process.env.PUBLIC_URL + '/login'}
+          render={() =>
+            login ? (
+              <Redirect to={process.env.PUBLIC_URL + '/'} />
+            ) : (
+              <LoginPage />
+            )
+          }
         />
       </Switch>
     </div>

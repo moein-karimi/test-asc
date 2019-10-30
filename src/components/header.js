@@ -5,7 +5,7 @@ import { isLogin } from '../redux/login/actions.login';
 
 const Header = ({ login, isLogin }) => (
   <div style={{ margin: '10px 50px' }} className="ui inverted menu">
-    <Link to="/" className="active item">
+    <Link to={process.env.PUBLIC_URL + '/'} className="active item">
       خانه
     </Link>
     {login ? (
@@ -13,7 +13,7 @@ const Header = ({ login, isLogin }) => (
         خروج
       </div>
     ) : (
-      <Link to="/login" className="item">
+      <Link to={process.env.PUBLIC_URL + '/login'} className="item">
         ورود
       </Link>
     )}
